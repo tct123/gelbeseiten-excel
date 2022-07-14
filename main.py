@@ -16,6 +16,7 @@ class MainApp(MDApp):
             on_press=exit,
             )
         )
+        screen.add_widget()
         return screen
         #return MDLabel(text="Hello, World", halign="center")
 
