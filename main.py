@@ -4,26 +4,36 @@ import kivy
 import kivymd
 from kivymd.app import MDApp
 from kivymd.uix.label import MDLabel
-from kivymd.uix.screenmanager import MDScreen
+from kivymd.uix.screen import MDScreen
 from kivymd.uix.button import MDRectangleFlatButton
 from kivymd.uix.textfield import MDTextField
+from kivymd.uix.toolbar import MDToolbar
 
 class MainApp(MDApp):
+    def getting_data(self):
+        print("Working.")
     def build(self):
         screen = MDScreen()
-        screen.add_widget(MDRectangleFlatButton(
+        self.toolbar = MDToolbar(title="Gelbe Seiten to Excel Converter")
+        self.toolbar.pos_hint = {"top": 1}
+        screen.add_widget(self.toolbar)
+        self.job_input = MDTextField(
+            text = "Input job",
+            halign = "center",
+            size_hint = (0.8,1),
+            pos_hint = {"center_x": 0.5, "center_y":0.45},
+            font_size = 22)
+        
+        self.btn = MDRectangleFlatButton(
             text="Hello World",
             pos_hint={"center_x": 0.5, "center_y":0.5},
-            on_press=exit,),
-        screen.add_widget(MDTextField(
-            hint_text = "No helper text",
-            ),
-        )
-    )
+            on_press=self.getting_data)
+        screen.add_widget(self.btn)
+        screen.add_widget(self.job_input)
+        #screen.add_widget(MDTextField(hint_text = "No helper text")
         return screen
         #return MDLabel(text="Hello, World", halign="center")
 
 MainApp().run()
 # request_url = https://www.gelbeseiten.de/Suche/{"job"}/{"city"}
 # plzurl = https://home.meinestadt.de/deutschland/plz-6
-print("Hello World")
