@@ -4,13 +4,13 @@ import kivy
 import kivymd
 from kivymd.app import MDApp
 from kivymd.uix.label import MDLabel
-from kivy.uix.screenmanager import Screen
+from kivymd.uix.screenmanager import MDScreen
 from kivymd.uix.button import MDRectangleFlatButton
 from kivymd.uix.textfield import MDTextField
 
 class MainApp(MDApp):
     def build(self):
-        screen = Screen()
+        screen = MDScreen()
         screen.add_widget(MDRectangleFlatButton(
             text="Hello World",
             pos_hint={"center_x": 0.5, "center_y":0.5},
