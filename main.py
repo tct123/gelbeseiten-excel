@@ -28,7 +28,7 @@ class MainApp(MDApp):
         self.btn = MDRoundFlatButton(
             text="Hello World",
             pos_hint={"center_x": 0.5, "center_y":0.5},
-            on_press=exit)
+            on_press=getting_data)
         screen.add_widget(self.btn)
         screen.add_widget(self.job_input)
         #screen.add_widget(MDTextField(hint_text = "No helper text")
