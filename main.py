@@ -5,7 +5,7 @@ import kivymd
 from kivymd.app import MDApp
 from kivymd.uix.label import MDLabel
 from kivymd.uix.screen import MDScreen
-from kivymd.uix.button import MDRectangleFlatButton
+from kivymd.uix.button import MDRoundFlatButton
 from kivymd.uix.textfield import MDTextField
 from kivymd.uix.toolbar import MDToolbar
 
@@ -24,7 +24,7 @@ class MainApp(MDApp):
             pos_hint = {"center_x": 0.5, "center_y":0.45},
             font_size = 22)
         
-        self.btn = MDRectangleFlatButton(
+        self.btn = MDRoundFlatButton(
             text="Hello World",
             pos_hint={"center_x": 0.5, "center_y":0.5},
             on_press=exit)
