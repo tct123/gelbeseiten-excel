@@ -10,7 +10,7 @@ from kivymd.uix.textfield import MDTextField
 from kivymd.uix.toolbar import MDToolbar
 
 class MainApp(MDApp):
-    def getting_data(self):
+    def gettingdata(self):
         self.printx = print("Working.")
         return self.printx
     def build(self):
@@ -28,7 +28,7 @@ class MainApp(MDApp):
         self.btn = MDRoundFlatButton(
             text = "Hello World",
             pos_hint = {"center_x": 0.5, "center_y":0.5},
-            on_press = self.printx)
+            on_press = gettingdata)
         screen.add_widget(self.btn)
         screen.add_widget(self.job_input)
         #screen.add_widget(MDTextField(hint_text = "No helper text")
