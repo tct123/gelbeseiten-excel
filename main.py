@@ -10,8 +10,9 @@ from kivymd.uix.textfield import MDTextField
 from kivymd.uix.toolbar import MDToolbar
 
 class MainApp(MDApp):
-    def getting_data(self):
-        print("Working.")
+    def getting_data(self,args):
+        self.printx = print("Working.")
+        return self.printx
     def build(self):
         screen = MDScreen()
         self.toolbar = MDToolbar(title="Gelbe Seiten to Excel Converter")
@@ -23,7 +24,7 @@ class MainApp(MDApp):
             size_hint = (0.8,1),
             pos_hint = {"center_x": 0.5, "center_y":0.45},
             font_size = 22)
-        
+
         self.btn = MDRoundFlatButton(
             text="Hello World",
             pos_hint={"center_x": 0.5, "center_y":0.5},
