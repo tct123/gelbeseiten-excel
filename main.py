@@ -8,6 +8,8 @@ from kivymd.uix.screen import MDScreen
 from kivymd.uix.button import MDRoundFlatButton
 from kivymd.uix.textfield import MDTextField
 from kivymd.uix.toolbar import MDToolbar
+import pooch
+import pandas as pd
 
 class MainApp(MDApp):
     def gettingdata(self):
@@ -34,6 +36,8 @@ class MainApp(MDApp):
         #screen.add_widget(MDTextField(hint_text = "No helper text")
         return screen
         #return MDLabel(text="Hello, World", halign="center")
+
+version=1
 
 MainApp().run()
 # request_url = https://www.gelbeseiten.de/Suche/{"job"}/{"city"}
