@@ -34,7 +34,7 @@ class MainApp(MDApp):
             text = "Get/update Lists",
             halign = "bottom",
             pos_hint = {"center_x": 0.5, "center_y":0.5},
-            on_press = updatezipcodes)
+            on_press = updatezipcodes())
         screen.add_widget(self.btn)
         screen.add_widget(self.job_input)
         #screen.add_widget(MDTextField(hint_text = "No helper text")
