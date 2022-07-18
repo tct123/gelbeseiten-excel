@@ -16,7 +16,8 @@ class MainApp(MDApp):
         self.printx = print("Working.")
     def updatezipcodes(self,url):
         self.url = "https://raw.githubusercontent.com/tct123/zipcodes-germany/master/zipcodes-germany-cleaned-up.csv"
-        pooch.retrieve(url)
+        self.hash = "https://raw.githubusercontent.com/tct123/zipcodes-germany/master/md5zipcodes.txt%0A"
+        pooch.retrieve(self.url, self.hash)
 
     def build(self):
         screen = MDScreen()
