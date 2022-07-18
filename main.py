@@ -30,7 +30,8 @@ class MainApp(MDApp):
             halign = "center",
             size_hint = (0.8,1),
             pos_hint = {"center_x": 0.5, "center_y":0.45},
-            font_size = 22)
+            #font_size = 22
+            )
 
         self.btn = MDRoundFlatButton(
             text = "Get/update Lists",
