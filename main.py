@@ -14,8 +14,9 @@ import pandas as pd
 class MainApp(MDApp):
     def gettingdata(self): #get data from gelbe seiten
         self.printx = print("Working.")
-    def updatezipcodes(self):
-        pooch.retrieve(url="https://raw.githubusercontent.com/tct123/zipcodes-germany/master/zipcodes-germany-cleaned-up.csv")
+    def updatezipcodes(self,url):
+        self.url = "https://raw.githubusercontent.com/tct123/zipcodes-germany/master/zipcodes-germany-cleaned-up.csv"
+        pooch.retrieve(url)
 
     def build(self):
         screen = MDScreen()
@@ -30,10 +31,10 @@ class MainApp(MDApp):
             font_size = 22)
 
         self.btn = MDRoundFlatButton(
-            text = "Hello World",
+            text = "Get/update Lists",
             halign = "bottom",
             pos_hint = {"center_x": 0.5, "center_y":0.5},
-            on_press = gettingdata)
+            on_press = updatezipcodes)
         screen.add_widget(self.btn)
         screen.add_widget(self.job_input)
         #screen.add_widget(MDTextField(hint_text = "No helper text")
@@ -42,6 +43,7 @@ class MainApp(MDApp):
 
 version=1
 
-MainApp().run()
+if __name__ == '__main__':
+    MainApp().run()
 # request_url = https://www.gelbeseiten.de/Suche/{"job"}/{"city"}
 # plzurl = https://home.meinestadt.de/deutschland/plz-6
