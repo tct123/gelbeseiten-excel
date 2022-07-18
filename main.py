@@ -12,7 +12,7 @@ from kivymd.uix.toolbar import MDToolbar
 class MainApp(MDApp):
     def gettingdata(self):
         self.printx = print("Working.")
-        #return self.printx
+        return self.printx
     def build(self):
         screen = MDScreen()
         self.toolbar = MDToolbar(title="Gelbe Seiten to Excel Converter")
