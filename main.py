@@ -14,7 +14,6 @@ import pandas as pd
 class MainApp(MDApp):
     def gettingdata(self): #get data from gelbe seiten
         self.printx = print("Working.")
-        return self.printx
     def updatezipcodes(self):
         pooch.retrieve(url="https://raw.githubusercontent.com/tct123/zipcodes-germany/master/zipcodes-germany-cleaned-up.csv")
 
@@ -32,6 +31,7 @@ class MainApp(MDApp):
 
         self.btn = MDRoundFlatButton(
             text = "Hello World",
+            halign = "bottom",
             pos_hint = {"center_x": 0.5, "center_y":0.5},
             on_press = gettingdata)
         screen.add_widget(self.btn)
