@@ -12,9 +12,12 @@ import pooch
 import pandas as pd
 
 class MainApp(MDApp):
-    def gettingdata(self):
+    def gettingdata(self): #get data from gelbe seiten
         self.printx = print("Working.")
         return self.printx
+    def updatezipcodes(self):
+        pooch.retrieve(url="https://github.com/fatiando-data/caribbean-bathymetry/releases/download/v1/caribbean-bathymetry.csv.xz")
+
     def build(self):
         screen = MDScreen()
         self.toolbar = MDToolbar(title="Gelbe Seiten to Excel Converter")
