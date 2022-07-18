@@ -10,13 +10,14 @@ from kivymd.uix.textfield import MDTextField
 from kivymd.uix.toolbar import MDToolbar
 import pooch
 import pandas as pd
+import wget
 
 class MainApp(MDApp):
-    def gettingdata(self): #get data from gelbe seiten
+    def gettingdata(self,printx): #get data from gelbe seiten
         self.printx = print("Working.")
     def updatezipcodes(self,url):
         self.url = "https://raw.githubusercontent.com/tct123/zipcodes-germany/master/zipcodes-germany-cleaned-up.csv"
-        self.hash = "https://raw.githubusercontent.com/tct123/zipcodes-germany/master/md5zipcodes.txt%0A"
+        self.hash = wget.download("https://raw.githubusercontent.com/tct123/zipcodes-germany/master/md5zipcodes.txt%0A")
         pooch.retrieve(self.url, self.hash)
 
     def build(self):
