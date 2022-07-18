@@ -16,7 +16,7 @@ class MainApp(MDApp):
         self.printx = print("Working.")
         return self.printx
     def updatezipcodes(self):
-        pooch.retrieve(url="https://github.com/fatiando-data/caribbean-bathymetry/releases/download/v1/caribbean-bathymetry.csv.xz")
+        pooch.retrieve(url="https://raw.githubusercontent.com/tct123/zipcodes-germany/master/zipcodes-germany-cleaned-up.csv")
 
     def build(self):
         screen = MDScreen()
