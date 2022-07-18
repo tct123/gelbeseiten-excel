@@ -16,8 +16,8 @@ class MainApp(MDApp):
     def gettingdata(self,printx): #get data from gelbe seiten
         self.printx = print("Working.")
     def updatezipcodes(self,url):
-        self.url = "https://raw.githubusercontent.com/tct123/zipcodes-germany/master/zipcodes-germany-cleaned-up.csv"
-        self.hash = wget.download("https://raw.githubusercontent.com/tct123/zipcodes-germany/master/md5zipcodes.txt%0A")
+        self.url = "http://raw.githubusercontent.com/tct123/zipcodes-germany/master/zipcodes-germany-cleaned-up.csv"
+        self.hash = wget.download("http://raw.githubusercontent.com/tct123/zipcodes-germany/master/md5zipcodes.txt%0A")
         pooch.retrieve(self.url, self.hash)
 
     def build(self):
