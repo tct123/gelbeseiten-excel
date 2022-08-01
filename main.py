@@ -29,7 +29,7 @@ class MainApp(MDApp):
             text = "Input job",
             halign = "center",
             size_hint = (0.8,1),
-            pos_hint = {"center_x": 0.5, "center_y":0.2},
+            pos_hint = {"center_x": 0.5, "center_y":0.15},
             #font_size = 22
             )
 
