@@ -11,14 +11,14 @@ from kivymd.uix.toolbar import MDToolbar
 import pooch
 import pandas as pd
 import wget
+import webbrowser
 
 class MainApp(MDApp):
     def gettingdata(self,printx): #get data from gelbe seiten
         self.printx = print("Working.")
-    def updatezipcodes(self,url):
-        self.url = "https://raw.githubusercontent.com/tct123/zipcodes-germany/master/zipcodes-germany-cleaned-up.csv"
-        self.hash = wget.download("https://raw.githubusercontent.com/tct123/zipcodes-germany/master/md5zipcodes.txt%0A")
-        pooch.retrieve(self.url, self.hash)
+    def updateprogramm(self):
+        url="https://github.com/tct123/gelbeseiten-excel/releases"
+        webbrowser.open(url)
 
     def build(self):
         screen = MDScreen()
@@ -36,7 +36,7 @@ class MainApp(MDApp):
         self.btn = MDRoundFlatButton(
             text = "Get/update Lists",
             pos_hint = {"center_x": 0.5, "center_y":0.5},
-            on_press = self.updatezipcodes)
+            on_press = self.updateprogramm)
         screen.add_widget(self.btn)
         screen.add_widget(self.job_input)
         #screen.add_widget(MDTextField(hint_text = "No helper text")
