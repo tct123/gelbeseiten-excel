@@ -34,9 +34,9 @@ class MainApp(MDApp):
             )
 
         self.btn = MDRoundFlatButton(
-            text = "Get/update Lists",
+            text = "Search for updates",
             pos_hint = {"center_x": 0.5, "center_y":0.5},
-            on_press = self.updateprogramm)
+            on_press = updateprogramm)
         screen.add_widget(self.btn)
         screen.add_widget(self.job_input)
         #screen.add_widget(MDTextField(hint_text = "No helper text")
