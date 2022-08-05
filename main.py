@@ -15,7 +15,7 @@ import webbrowser
 import sqlite3
 
 class MainApp(MDApp):
-    def gettingdata(self,printx): #get data from gelbe seiten
+    def gettingdata(self, instance): #get data from gelbe seiten
         self.printx = print("Working.")
     
     def updateprogramm(self,instance):
@@ -45,6 +45,7 @@ class MainApp(MDApp):
             text = "Search for entries",
 
         )
+        self.get_data_button.bind(on_press = self.gettingdata)
         screen.add_widget(self.get_data_button)
         #screen.add_widget(MDTextField(hint_text = "No helper text")
         return screen
