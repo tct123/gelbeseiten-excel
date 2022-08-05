@@ -35,11 +35,11 @@ class MainApp(MDApp):
             #font_size = 22
             )
 
-        self.btn = MDRoundFlatButton(
+        self.update_btn = MDRoundFlatButton(
             text = "Search for updates",
             pos_hint = {"center_x": 0.5, "center_y":0.5})
-        self.btn.bind(on_press = self.updateprogramm)
-        screen.add_widget(self.btn)
+        self.update_btn.bind(on_press = self.updateprogramm)
+        screen.add_widget(self.update_btn)
         screen.add_widget(self.job_input)
         #screen.add_widget(MDTextField(hint_text = "No helper text")
         return screen
