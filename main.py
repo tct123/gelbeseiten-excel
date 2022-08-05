@@ -26,13 +26,13 @@ class MainApp(MDApp):
         conn = sqlite3.connect("entries.db")
         c = conn.cursor()
         c.execute("""CREATE TABLE if not exists "gelbeseiten-excel" (
-	"name-of-buissnes"	TEXT,
-	"category"	TEXT,
-	"webpage"	TEXT,
-	"zipcode-and-city"	TEXT,
-	"telnummer"	INTEGER,
-	"Adress"	TEXT
-);""")
+	        "name-of-buissnes"	TEXT,
+	        "category"	TEXT,
+	        "webpage"	TEXT,
+	        "zipcode-and-city"	TEXT,
+	        "telnummer"	INTEGER,
+	        "Adress"	TEXT
+            );""")
         screen = MDScreen()
         self.toolbar = MDToolbar(title="Gelbe Seiten to Excel Converter")
         self.toolbar.pos_hint = {"top": 1}
