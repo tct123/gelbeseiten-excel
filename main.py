@@ -12,6 +12,7 @@ import pooch
 import pandas as pd
 import wget
 import webbrowser
+import sqlite3
 
 class MainApp(MDApp):
     def gettingdata(self,printx): #get data from gelbe seiten
