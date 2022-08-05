@@ -41,6 +41,11 @@ class MainApp(MDApp):
         self.update_btn.bind(on_press = self.updateprogramm)
         screen.add_widget(self.update_btn)
         screen.add_widget(self.job_input)
+        self.get_data_button = MDRoundFlatButton(
+            text = "Search for entries",
+
+        )
+        screen.add_widget(self.get_data_button)
         #screen.add_widget(MDTextField(hint_text = "No helper text")
         return screen
         #return MDLabel(text="Hello, World", halign="center")
