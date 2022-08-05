@@ -17,7 +17,8 @@ import sqlite3
 class MainApp(MDApp):
     def gettingdata(self,printx): #get data from gelbe seiten
         self.printx = print("Working.")
-    def updateprogramm(self):
+    
+    def updateprogramm(self,instance):
         url="https://github.com/tct123/gelbeseiten-excel/releases"
         webbrowser.open(url)
 
@@ -36,13 +37,16 @@ class MainApp(MDApp):
 
         self.btn = MDRoundFlatButton(
             text = "Search for updates",
-            pos_hint = {"center_x": 0.5, "center_y":0.5},
-            on_press = updateprogramm)
+            pos_hint = {"center_x": 0.5, "center_y":0.5})
+        self.btn.bind(on_press = self.updateprogramm)
         screen.add_widget(self.btn)
         screen.add_widget(self.job_input)
         #screen.add_widget(MDTextField(hint_text = "No helper text")
         return screen
         #return MDLabel(text="Hello, World", halign="center")
+    
+
+
 
 version=1
 
@@ -50,3 +54,4 @@ if __name__ == '__main__':
     MainApp().run()
 # request_url = https://www.gelbeseiten.de/Suche/{"job"}/{"city"}
 # plzurl = https://home.meinestadt.de/deutschland/plz-6
+# Info = https://stackoverflow.com/questions/46351997/python-kivy-how-to-call-a-function-on-button-click
