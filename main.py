@@ -32,7 +32,11 @@ class MainApp(MDApp):
 	        "zipcode-and-city"	TEXT,
 	        "telnummer"	INTEGER,
 	        "Adress"	TEXT)""")
-            
+        
+        conn.commit()
+
+        conn.close()
+
         screen = MDScreen()
         self.toolbar = MDToolbar(title="Gelbe Seiten to Excel Converter")
         self.toolbar.pos_hint = {"top": 1}
