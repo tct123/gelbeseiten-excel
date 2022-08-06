@@ -52,8 +52,7 @@ class MainApp(MDApp):
         screen.add_widget(self.update_btn)
         screen.add_widget(self.job_input)
         self.get_data_button = MDRoundFlatButton(
-            text = "Search for entries",
-
+            text = "Search for entries"
         )
         self.get_data_button.bind(on_press = self.gettingdata)
         screen.add_widget(self.get_data_button)
