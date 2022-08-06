@@ -38,7 +38,7 @@ class MainApp(MDApp):
         self.toolbar.pos_hint = {"top": 1}
         screen.add_widget(self.toolbar)
         self.job_input = MDTextField(
-            text = "Input job",
+            hint_text = "Input job",
             halign = "center",
             size_hint = (0.8,1),
             pos_hint = {"center_x": 0.5, "center_y":0.15},
