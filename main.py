@@ -15,12 +15,18 @@ import webbrowser
 import sqlite3
 
 class MainApp(MDApp):
+    def callback(self):
+        pass
     def gettingdata(self, instance): #get data from gelbe seiten
         self.printx = print("Working.")
     
     def updateprogramm(self,instance):
         url="https://github.com/tct123/gelbeseiten-excel/releases"
         webbrowser.open(url)
+
+    def callback(self, button):
+        self.menu.caller = button
+        self.menu.open()
 
     def build(self):
         conn = sqlite3.connect("entries.db")
@@ -38,7 +44,7 @@ class MainApp(MDApp):
         conn.close()
 
         screen = MDScreen()
-        self.toolbar = MDTopAppBar(title="Gelbe Seiten to Excel Converter",left_action_items = [["menu", lambda x: app.callback()]])
+        self.toolbar = MDTopAppBar(title="Gelbe Seiten to Excel Converter",left_action_items = [["menu", lambda x: self.callback(x)]])
         self.toolbar.pos_hint = {"top": 1}
         screen.add_widget(self.toolbar)
         self.job_input = MDTextField(
