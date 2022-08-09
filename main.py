@@ -7,7 +7,7 @@ from kivymd.uix.label import MDLabel
 from kivymd.uix.screen import MDScreen
 from kivymd.uix.button import MDRoundFlatButton
 from kivymd.uix.textfield import MDTextField
-from kivymd.uix.toolbar import MDToolbar
+from kivymd.uix.toolbar import MDTopAppBar
 import pooch
 import pandas as pd
 import wget
@@ -38,7 +38,7 @@ class MainApp(MDApp):
         conn.close()
 
         screen = MDScreen()
-        self.toolbar = MDToolbar(title="Gelbe Seiten to Excel Converter")
+        self.toolbar = MDTopAppBar(title="Gelbe Seiten to Excel Converter")
         self.toolbar.pos_hint = {"top": 1}
         screen.add_widget(self.toolbar)
         self.job_input = MDTextField(
