@@ -38,7 +38,7 @@ class MainApp(MDApp):
         conn.close()
 
         screen = MDScreen()
-        self.toolbar = MDTopAppBar(title="Gelbe Seiten to Excel Converter")
+        self.toolbar = MDTopAppBar(title="Gelbe Seiten to Excel Converter",left_action_items = [["menu", lambda x: app.callback()]])
         self.toolbar.pos_hint = {"top": 1}
         screen.add_widget(self.toolbar)
         self.job_input = MDTextField(
