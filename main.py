@@ -13,6 +13,8 @@ import pandas as pd
 import wget
 import webbrowser
 import sqlite3
+from kivymd.uix.navigationdrawer import MDNavigationDrawer
+from kivymd.uix.menu import MDDropdownMenu
 
 class MainApp(MDApp):
     def callback(self):
@@ -47,6 +49,8 @@ class MainApp(MDApp):
         self.toolbar = MDTopAppBar(title="Gelbe Seiten to Excel Converter",left_action_items = [["menu", lambda x: self.callback(x)]])
         self.toolbar.pos_hint = {"top": 1}
         screen.add_widget(self.toolbar)
+        self.nav_draw = MDNavigationDrawer()
+        #screen.add_widget(self.nav_draw)
         self.job_input = MDTextField(
             hint_text = "Input job",
             halign = "center",
