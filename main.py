@@ -14,7 +14,6 @@ import wget
 import webbrowser
 import sqlite3
 from kivymd.uix.navigationdrawer import MDNavigationDrawer
-from kivymd.uix.menu import MDDropdownMenu
 
 class MainApp(MDApp):
     def callback(self):
