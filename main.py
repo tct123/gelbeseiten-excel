@@ -15,6 +15,18 @@ import webbrowser
 import sqlite3
 from kivymd.uix.navigationdrawer import MDNavigationDrawer
 
+lang = input("Enter your language (Deutsch, English): ")
+
+if lang.lower() == "deutsch":
+    job_input_text = "Gebe Job ein"
+    update_btn_text = "Suche nach Updates"
+    get_data_button_text = "Suche nach Einträgen"
+else:
+    job_input_text = "Enter job"
+    update_btn_text = "Search for updates"
+    get_data_button_text = "Search for entries"
+
+
 class MainApp(MDApp):
     def callback(self):
         pass
@@ -51,7 +63,7 @@ class MainApp(MDApp):
         self.nav_draw = MDNavigationDrawer()
         #screen.add_widget(self.nav_draw)
         self.job_input = MDTextField(
-            hint_text = "Input job",
+            hint_text = f"{job_input_text}",
             halign = "center",
             size_hint = (0.8,1),
             pos_hint = {"center_x": 0.5, "center_y":0.15},
@@ -59,13 +71,13 @@ class MainApp(MDApp):
             )
 
         self.update_btn = MDRoundFlatButton(
-            text = "Search for updates",
+            text = f"{update_btn_text}",
             pos_hint = {"center_x": 0.5, "center_y":0.5})
         self.update_btn.bind(on_press = self.updateprogramm)
         screen.add_widget(self.update_btn)
         screen.add_widget(self.job_input)
         self.get_data_button = MDRoundFlatButton(
-            text = "Search for entries"
+            text = f"{get_data_button_text}"
         )
         self.get_data_button.bind(on_press = self.gettingdata)
         screen.add_widget(self.get_data_button)
