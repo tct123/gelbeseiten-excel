@@ -28,7 +28,7 @@ else:
 
 
 class MainApp(MDApp):
-    def callback(self):
+    def callback(self, obj):
         pass
     def gettingdata(self, instance): #get data from gelbe seiten
         self.printx = print("Working.")
@@ -64,22 +64,17 @@ class MainApp(MDApp):
         #screen.add_widget(self.nav_draw)
         self.job_input = MDTextField(
             hint_text = f"{job_input_text}",
-            halign = "center",
+            # halign = "center",
             size_hint = (0.8,1),
             pos_hint = {"center_x": 0.5, "center_y":0.15},
             #font_size = 22
             )
 
-        self.update_btn = MDRoundFlatButton(
-            text = f"{update_btn_text}",
-            pos_hint = {"center_x": 0.5, "center_y":0.5})
-        self.update_btn.bind(on_press = self.updateprogramm)
+        self.update_btn = MDRoundFlatButton(text = f"{update_btn_text}", pos_hint = {"center_x": 0.5, "center_y":0.5}, on_press = self.updateprogramm)
+        self.update_btn.bind()
         screen.add_widget(self.update_btn)
         screen.add_widget(self.job_input)
-        self.get_data_button = MDRoundFlatButton(
-            text = f"{get_data_button_text}"
-        )
-        self.get_data_button.bind(on_press = self.gettingdata)
+        self.get_data_button = MDRoundFlatButton(text = f"{get_data_button_text}", on_press = self.gettingdata)
         screen.add_widget(self.get_data_button)
         #screen.add_widget(MDTextField(hint_text = "No helper text")
         return screen
